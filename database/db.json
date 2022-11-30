@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "title": "Laravel 1",
+      "body": "Laravel 1",
+      "tags": [
+        "laravel"
+      ],
+      "id": 1
+    },
+    {
+      "title": "PHP 1",
+      "body": "PHP 1",
+      "tags": [
+        "php",
+        "laravel"
+      ],
+      "id": 2
+    },
+    {
+      "title": "JS ",
+      "body": "java script",
+      "tags": [
+        "js",
+        "html",
+        "css"
+      ],
+      "id": 3
+    },
+    {
+      "title": "HTML",
+      "body": "Hyper text markup language",
+      "tags": [
+        "html"
+      ],
+      "id": 4
+    }
+  ]
+}
