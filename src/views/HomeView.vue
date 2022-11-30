@@ -1,24 +1,27 @@
 <template>
   <div class="container mt-3">
-    <div class="row">
-      <div class="col-md-6">
-        <div v-if="error">
-          {{error}}
-        </div>
-        <div v-if="posts.length > 0">
+    <!-- Error -->
+    <div v-if="error">
+      {{error}}
+    </div>
+    <!-- Data -->
+    <div v-if="posts.length">
+      <div class="row">
+        <div class="col-md-6">
           <PostsList :posts="posts"></PostsList>
         </div>
-        <div v-else-if="!error && !posts.length">
-          <Spinner></Spinner>
+        <div class="col-md-6">
+          <TagCloud :posts="posts"></TagCloud>
         </div>
       </div>
-      <div class="col-md-3">
-        <TagCloud :posts="posts"></TagCloud>
-      </div>
-      <div class="col-md-3"></div>
+    </div>
+        <!-- Spinner -->
+    <div v-else-if="!error && !posts.length">
+      <Spinner></Spinner>
     </div>
   </div>
 </template>
+
 
 <script>
 import TagCloud from '../components/TagCloud'
