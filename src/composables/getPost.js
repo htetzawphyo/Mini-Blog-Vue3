@@ -1,3 +1,5 @@
+import { db } from "@/firebase/config";
+import { doc, getDoc } from "firebase/firestore/lite";
 import { ref } from "vue";
 
 let getPost = (id) => {
@@ -9,12 +11,9 @@ let getPost = (id) => {
             // await new Promise( (resolve, reject) => {
             //     setTimeout(resolve, 2000) // for loading process
             // })
-            let response = await fetch('http://localhost:3000/posts/'+id);
-            if(response.status === 404){
-                throw new Error("Not found that exact url!");
-            }
-            let data = await response.json();
-            post.value = data;
+            let rawDoc = doc(db, 'posts', id);
+            let docData = await getDoc(rawDoc);
+            post.value = {id: docData.id, ...docData.data()}
         } catch(err){
             error.value = err.message;
         }
