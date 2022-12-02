@@ -4,7 +4,7 @@ import { ref } from "vue";
 
 let getPost = (id) => {
     let post = ref(null);
-    let error = ref("");
+    let error = ref(""); 
 
     let load = async() => {
         try{
