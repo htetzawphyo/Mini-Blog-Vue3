@@ -15,14 +15,14 @@ export default {
  
     props.posts.forEach((post) => { 
       post.tags.forEach( (tag) => {
-        tags.value.push(tag); 
+        tags.value.push(tag);
       }) 
     });
 
     let uniqueTags = tags.value.filter((tag,index,array) => {
       return array.indexOf(tag) === index;
     })
-    
+
     return {uniqueTags}
   }
 }
